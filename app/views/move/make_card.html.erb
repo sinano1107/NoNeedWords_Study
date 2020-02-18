@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Make a card!</h1>
+  <% @error_text.each do |error_text| %>
+    <p class="error_text red-text accent-2"><%= error_text %></p>
+  <% end %>
+  <%= form_tag("/processing/make_card") do %>
+    <div class="input-field">
+      <textarea id="e" class="materialize-textarea" name="e"><%= @word.e %></textarea>
+      <label for="e">English word</label>
+    </div>
+    <div class="input-field">
+      <textarea id="j" class="materialize-textarea" name="j"><%= @word.j %></textarea>
+      <label for="j">Japanese translation</label>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light"><i class="material-icons left">create</i>Completion!</button>
+    <button type="submit" name="repeat" class="btn waves-effect waves-light"><i class="material-icons left">replay</i>Continue to write?</button>
+  <% end %>
+</div>

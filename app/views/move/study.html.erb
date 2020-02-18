@@ -1,0 +1,72 @@
+<div class="js_bridge">
+  <p id="js_study"><%= @questions_array %></p>
+  <p id="js_language"><%= @language %></p>
+  <p id="js_format"><%= @format %></p>
+</div>
+<div class="container">
+  <div id="study_wrapper">
+    <h1 id="study_title">Study Title (1/5)</h1>
+    <div class="row">
+      <div class="col s6 m6">
+        <div class="card blue-grey darken-1 study_card">
+          <div class="card-content white-text">
+            <span class="card-title">Question</span>
+            <h5 id="question_word">Question Word</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col s6 m6">
+        <div class="card blue-grey darken-1 study_card">
+          <div class="card-content white-text">
+            <span class="card-title">Answer</span>
+            <form id="input_field" name="input_field" class="input-field">
+              <textarea id="textarea" name="textarea" class="materialize-textarea"></textarea>
+              <label>Translation</label>
+            </form>
+            <h5 id="correct">Correct</h5>
+          </div>
+        </div>
+      </div>
+
+      <table class="col s3 m3 centered ">
+        <tbody>
+          <tr>
+            <td><i class="material-icons green-text accent-3">check</i></td>
+            <td><i class="material-icons red-text accent-2">clear</i></td>
+          </tr>
+          <tr>
+            <td id="score0">0</td>
+            <td id="score1">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button id="next-btn" class="btn waves-effect waves-light right btn-large">Next!</button>
+      <button id="end-btn" class="btn waves-effect waves-light right btn-large">End!</button>
+      <button id="correct-show-btn" class="btn waves-effect waves-light right">See the correct answer</button>
+    </div>
+  </div>
+
+  <div id="result_wrapper">
+    <h1>Result</h1>
+    <table class="striped centered">
+      <thead>
+        <tr>
+          <th>number</th>
+          <th>question</th>
+          <th>Correct answer</th>
+          <th id="reply">Your reply</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+
+      <tbody id="result_return"></tbody>
+    </table>
+
+    <%= link_to "again", "#{@again_btn_href}", class: "btn waves-effect waves-light right" %>
+    <%= link_to "next", "#{@next_btn_href}", class: "btn waves-effect waves-light right", id: "result_next_btn" %>
+    <%= link_to "end", "/processing/finishing/#{@questions}", class: "btn waves-effect waves-light right", id: "result_end_btn", :method => :post %>
+  </div>
+
+  <p id="test">test</p>
+</div>

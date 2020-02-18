@@ -1,0 +1,21 @@
+<div class="js_bridge">
+  <p id="js_election"><%= @questions %></p>
+</div>
+<%= form_tag("/processing/election_processing/#{@count}/#{@box}") do %>
+  <div class="container">
+    <h1>Please select <%= @count %> problems</h1>
+    <p class="error_text red-text accent-2"><%= @error_text %></p>
+    <table class="striped centered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>index</th>
+          <th>English word</th>
+          <th>Japanese translation</th>
+        </tr>
+      </thead>
+      <tbody id="return_area"></tbody>
+    </table>
+    <button type="submit" class="btn waves-effect waves-light btn-large">OK!</button>
+  </div>
+<% end %>
